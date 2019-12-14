@@ -42,7 +42,7 @@ class fsystem
         {
             cout << broker_map[it][0] << " balance_" << broker_map[it][1] <<
             "_" << broker_map[it][2];
-            cout << endl << it << endl;
+            cout << endl;
         }
     }
 
