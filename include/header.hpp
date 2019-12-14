@@ -28,7 +28,7 @@ class fsystem
     public:
     bool is_digit(std::string verifiable){
         bool flag = true;
-        for (int i = 0; i < 8; ++i)
+        for (unsigned i = 0; i < 8; ++i)
         {
             if ((verifiable[i] < '0') || (verifiable[i] > '9'))
                 flag = false;
@@ -38,7 +38,7 @@ class fsystem
 
     void print_first()
     {
-        for (int it = 0; it < broker_map.size(); ++it)
+        for (unsigned it = 0; it < broker_map.size(); ++it)
         {
             cout << broker_map[it][0] << " balance_" << broker_map[it][1] <<
             "_" << broker_map[it][2];
@@ -74,7 +74,7 @@ class fsystem
 
     void print_second()
     {
-        for (int i = 0; i < clear_map.size(); ++i)
+        for (unsigned i = 0; i < clear_map.size(); ++i)
             cout << "broker:" << clear_map[i][0] <<
                  " account:" << clear_map[i][1] <<
                  " files:" << clear_map[i][2] <<
@@ -84,9 +84,9 @@ class fsystem
 
     void create_clear()
     {
-        for (int it = 0; it < broker_map.size(); it++)
+        for (unsigned it = 0; it < broker_map.size(); it++)
         {
-            int j = 0;
+            unsigned j = 0;
             int flag = 0;
             for (; j < clear_map.size(); ++j)
             {
