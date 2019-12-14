@@ -6,7 +6,7 @@
 using boost::filesystem::all_all;
 
 TEST(Example, EmptyTest) {
-    auto path_ftp = boost::filesystem::path{"./../misc/ftp"}
+    auto _path = boost::filesystem::path{"./../misc/ftp"};
     fsystem test;
     test.start(_path);
     EXPECT_TRUE(true);
