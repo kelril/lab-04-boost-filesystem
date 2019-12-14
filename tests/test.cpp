@@ -3,10 +3,8 @@
 #include <gtest/gtest.h>
 #include <header.hpp>
 
-using boost::filesystem::all_all;
-
 TEST(Example, EmptyTest) {
-    auto _path = boost::filesystem::path{"./../misc/ftp"};
+    path _path = "./../misc/ftp";
     fsystem test;
     test.start(_path);
     EXPECT_TRUE(true);
