@@ -126,7 +126,7 @@ class fsystem
 
     void engine(path _input_dir)
     {
-        for(directory_iterator p(_input_dir), end; p != end; p++) {
+        for (directory_iterator p(_input_dir), end; p != end; p++) {
             if (p->status().type() == DIRECTORY)
                 engine(p->path());
             if (p->status().type() == COM_FILE) {
