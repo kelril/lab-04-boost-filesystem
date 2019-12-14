@@ -4,7 +4,7 @@
 #include <header.hpp>
 
 TEST(Example, EmptyTest) {
-    path _path = "./../misc/ftp";
+    path _path = "./../misc/ftp/";
     fsystem test;
     test.start(_path);
     EXPECT_TRUE(true);
