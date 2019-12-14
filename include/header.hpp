@@ -51,12 +51,12 @@ class fsystem
         bool flag = false;
         std::string file = file_n.c_str();
 
-        if((file.length() == RIGHT_LENGTH) &&
-        (file.substr(0,8) == "balance_") &&
+        if ((file.length() == RIGHT_LENGTH) &&
+        (file.substr(0, 8) == "balance_") &&
         (is_digit(file.substr(8, 8))) &&
         (file[16] == '_') &&
         (is_digit(file.substr(17, 8))) &&
-        (file.substr(25,4) == ".txt"))
+        (file.substr(25, 4) == ".txt"))
             flag = true;
         return flag;
     }
@@ -90,7 +90,7 @@ class fsystem
             int flag = 0;
             for (; j < clear_map.size(); ++j)
             {
-                if((broker_map[it][0] == clear_map[j][0]) &&
+                if ((broker_map[it][0] == clear_map[j][0]) &&
                 (broker_map[it][1] == clear_map[j][1])) {
                     flag = 1;
                     int tmp = stoi(clear_map[j][2]);
@@ -126,11 +126,11 @@ class fsystem
 
     void engine(path _input_dir)
     {
-        for(directory_iterator p(_input_dir), end;p!=end;p++) {
-            if(p->status().type() == DIRECTORY)
+        for(directory_iterator p(_input_dir), end; p != end; p++) {
+            if (p->status().type() == DIRECTORY)
                 engine(p->path());
             if (p->status().type() == COM_FILE) {
-                if(check_format(p->path().filename()) == true)
+                if (check_format(p->path().filename()) == true)
                 {
                     create_account(p->path());
                 }
