@@ -118,7 +118,6 @@ class fsystem
         engine(_input_dir);
         print_first();
 
-        vector<vector<std::string>> a;
         create_clear();
         print_second();
     }
