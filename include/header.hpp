@@ -64,8 +64,7 @@ class fsystem
     void create_account(path _path) {
         std::string __path = _path.filename().c_str();
         std::string __parent_name = _path.parent_path().filename().c_str();
-		
-		vector<std::string> tmp;
+        vector<std::string> tmp;
         tmp.push_back(__parent_name);
         tmp.push_back(__path.substr(8, 8));
         tmp.push_back(__path.substr(17, 8));
