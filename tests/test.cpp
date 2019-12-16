@@ -4,9 +4,8 @@
 #include <header.hpp>
 
 TEST(Example, EmptyTest) {
-    path _path = "./../misc/ftp/";
     fsystem test;
-    test.start(_path);
+    test.start("./../misc/ftp/");
     EXPECT_TRUE(true);
 }
 
