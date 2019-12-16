@@ -19,7 +19,7 @@ SHA1 "70287b1ffa810ee4e952052a9adff9b4856d0d54"
 )
 
 project(lab-04-boost-filesystem)
-string(APPEND CMAKE_CXX_FLAGS " -pedantic -Werror -Wextra")
+string(APPEND CMAKE_CXX_FLAGS " -pedantic -Werror -Wall -Wextra")
 string(APPEND CMAKE_CXX_FLAGS " -Wno-unused-command-line-argument")
 string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
 
@@ -36,14 +36,6 @@ include_directories(${Boost_INCLUDE_DIRS})
 #find_package(Boost CONFIG REQUIRED system filesystem)
 
 add_library(lab-04-boost-filesystem STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/source.cpp)
-
-set(SOURCES
-sources/source.cpp
-)
-
-set(HEADERS
-include/header.hpp
-)
 
 add_executable(tests tests/test.cpp ${SOURCES} ${HEADERS})
 
