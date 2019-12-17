@@ -73,8 +73,9 @@ class fsystem
         if (file.find(".old") == file.size()) {
             return false;
         }
-        if (file.find(".txt") != file.size())
-            return true;
+        if (file.find(".txt") == file.size())
+            return false;
+		return true;
     }
 
     void create_account(path _path) {
