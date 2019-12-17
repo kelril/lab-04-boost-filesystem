@@ -48,17 +48,30 @@ class fsystem
 
     bool check_format(const path file_n)
     {
-        bool flag = false;
         std::string file = file_n.c_str();
 
-        if ((file.length() == RIGHT_LENGTH) &&
-        (file.substr(0, 8) == "balance_") &&
-        (is_digit(file.substr(8, 8))) &&
-        (file[16] == '_') &&
-        (is_digit(file.substr(17, 8))) &&
-        (file.substr(25, 4) == ".txt"))
-            flag = true;
-        return flag;
+        if(file.find("balance_") != 0) {
+            return false;
+        }
+        auto iter = file.find("_") + 1;
+        if (file.substr(iter, (file.size())).find_first_of("0123456789") != 0) {
+            return false;
+        }
+        if (file.substr(iter, file.size()).find_first_not_of("0123456789") != 8) {
+            return false;
+        }
+        iter = file.find("_",iter) + 1;
+        if (file.substr(iter, (file.size())).find_first_of("0123456789") != 0) {
+            return false;
+        }
+        if (file.substr(iter, file.size()).find_first_not_of("0123456789") != 8) {
+            return false;
+        }
+        if (file.find(".old") == file.size()) {
+            return false;
+        }
+        if (file.find(".txt") != file.size())
+            return true;
     }
 
     void create_account(path _path) {
