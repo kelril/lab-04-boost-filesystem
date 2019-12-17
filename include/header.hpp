@@ -57,17 +57,17 @@ class fsystem
         if (file.substr(iter, (file.size())).find_first_of("0123456789") != 0) {
             return false;
         }
-        if (file.substr(iter, file.size()).find_first_not_of("0123456789") 
-			!= 8) {
+        if (file.substr(iter, file.size()).find_first_not_of("0123456789")
+            != 8) {
             return false;
         }
         iter = file.find("_", iter) + 1;
-        if (file.substr(iter, (file.size())).find_first_of("0123456789") 
-			!= 0) {
+        if (file.substr(iter, (file.size())).find_first_of("0123456789")
+            != 0) {
             return false;
         }
-        if (file.substr(iter, file.size()).find_first_not_of("0123456789") 
-			!= 8) {
+        if (file.substr(iter, file.size()).find_first_not_of("0123456789")
+            != 8) {
             return false;
         }
         if (file.find(".old") == file.size()) {
