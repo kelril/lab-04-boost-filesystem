@@ -50,21 +50,24 @@ class fsystem
     {
         std::string file = file_n.c_str();
 
-        if(file.find("balance_") != 0) {
+        if (file.find("balance_") != 0) {
             return false;
         }
         auto iter = file.find("_") + 1;
         if (file.substr(iter, (file.size())).find_first_of("0123456789") != 0) {
             return false;
         }
-        if (file.substr(iter, file.size()).find_first_not_of("0123456789") != 8) {
+        if (file.substr(iter, file.size()).find_first_not_of("0123456789") 
+			!= 8) {
             return false;
         }
-        iter = file.find("_",iter) + 1;
-        if (file.substr(iter, (file.size())).find_first_of("0123456789") != 0) {
+        iter = file.find("_", iter) + 1;
+        if (file.substr(iter, (file.size())).find_first_of("0123456789") 
+			!= 0) {
             return false;
         }
-        if (file.substr(iter, file.size()).find_first_not_of("0123456789") != 8) {
+        if (file.substr(iter, file.size()).find_first_not_of("0123456789") 
+			!= 8) {
             return false;
         }
         if (file.find(".old") == file.size()) {
