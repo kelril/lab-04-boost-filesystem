@@ -6,7 +6,7 @@
 TEST(Example, EmptyTest) {
     fsystem test;
     test.start("./../misc/ftp/");
-    EXPECT_TRUE(true);
+    EXPECT_EQ(test.number_of("bcs", 122223), 46);
 }
 
 int main(int argc, char **argv) {
