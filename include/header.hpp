@@ -26,16 +26,6 @@ using boost::filesystem::directory_iterator;
 class fsystem
 {
 public:
-    bool is_digit(std::string verifiable){
-        bool flag = true;
-        for (unsigned i = 0; i < 8; ++i)
-        {
-            if ((verifiable[i] < '0') || (verifiable[i] > '9'))
-                flag = false;
-        }
-        return flag;
-    }
-
     void print_first()
     {
         for (unsigned it = 0; it < broker_map.size(); ++it)
