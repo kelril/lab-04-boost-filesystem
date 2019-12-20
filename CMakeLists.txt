@@ -3,8 +3,6 @@ cmake_minimum_required(VERSION 3.4)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-option(BUILD_COVERAGE "Build coverage" OFF)
-
 set(
 HUNTER_CACHE_SERVERS
 "https://github.com/bmstu-iu8-cpp-sem-3/hunter-cache"
@@ -32,8 +30,7 @@ set(Boost_USE_STATIC_LIBS ON)
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME ON)
 FIND_PACKAGE(Boost REQUIRED COMPONENTS system filesystem)
-include_directories(${Boost_INCLUDE_DIRS})
-#find_package(Boost CONFIG REQUIRED system filesystem)
+include_directories(${Boost_INCLUDE_DIRS})s
 
 add_library(lab-04-boost-filesystem STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/source.cpp)
 
@@ -58,12 +55,3 @@ target_link_libraries(tests GTest::main Boost::system Boost::filesystem ${Boost_
 enable_testing()
 add_test(NAME unit_tests COMMAND tests)
 
-if(BUILD_COVERAGE)
-set(ENABLE_COVERAGE ON CACHE BOOL "Enable coverage build." FORCE)
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-find_package(codecov)
-add_coverage(lab-04-boost-filesystem)
-add_coverage(tests)
-list(APPEND LCOV_REMOVE_PATTERNS "'${PROJECT_SOURCE_DIR}/tests/*'")
-coverage_evaluate()
-endif()
