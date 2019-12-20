@@ -25,7 +25,7 @@ using boost::filesystem::directory_iterator;
 
 class fsystem
 {
-    public:
+public:
     bool is_digit(std::string verifiable){
         bool flag = true;
         for (unsigned i = 0; i < 8; ++i)
@@ -41,7 +41,7 @@ class fsystem
         for (unsigned it = 0; it < broker_map.size(); ++it)
         {
             cout << broker_map[it][0] << " balance_" << broker_map[it][1] <<
-            "_" << broker_map[it][2];
+                 "_" << broker_map[it][2];
             cout << endl;
         }
     }
@@ -70,10 +70,10 @@ class fsystem
             != 8) {
             return false;
         }
-        if (file.find(".old") == file.size()) {
+        if (file.find(".old") != file.npos) {
             return false;
         }
-        if (file.find(".txt") == file.size()){
+        if (file_n.extension() != ".txt"){
             return false;
         }
         return true;
@@ -108,7 +108,7 @@ class fsystem
             for (; j < clear_map.size(); ++j)
             {
                 if ((broker_map[it][0] == clear_map[j][0]) &&
-                (broker_map[it][1] == clear_map[j][1])) {
+                    (broker_map[it][1] == clear_map[j][1])) {
                     flag = 1;
                     int tmp = stoi(clear_map[j][2]);
                     tmp++;
