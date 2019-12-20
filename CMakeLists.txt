@@ -30,7 +30,7 @@ set(Boost_USE_STATIC_LIBS ON)
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME ON)
 FIND_PACKAGE(Boost REQUIRED COMPONENTS system filesystem)
-include_directories(${Boost_INCLUDE_DIRS})s
+include_directories(${Boost_INCLUDE_DIRS})
 
 add_library(lab-04-boost-filesystem STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/source.cpp)
 
