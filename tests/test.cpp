@@ -14,7 +14,8 @@ TEST(Example, EmptyTest) {
         str_curr_path += string("/misc/ftp");
     }
     auto path_ftp = boost::filesystem::path{str_curr_path.c_str()};
-    my_FTP result(path_ftp);
+    fsystem result;
+    result.start(path_ftp);
     EXPECT_TRUE(true);
 }
 
