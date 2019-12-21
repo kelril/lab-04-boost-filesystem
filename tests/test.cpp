@@ -4,8 +4,11 @@
 #include <header.hpp>
 
 TEST(Example, EmptyTest) {
+    auto curr_path = boost::filesystem::current_path();
+    std::string str_path = curr_path.c_str();
+    str_path += string("misc/ftp");
     fsystem test;
-    test.start("./../misc/ftp/");
+    test.start(str_path.c_str());
     EXPECT_EQ(test.number_of("bcs", 122223), 46);
 }
 
